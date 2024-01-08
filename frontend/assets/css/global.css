@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+
+  /*section*/
+  --section-padding:95px;
+}
+
+li {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  height: auto;
+}
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  outline: none;
+}
+input {
+  width: 100%;
+}
+button {
+  cursor: pointer;
+}
+html {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+
+.section {
+  padding-block: 95px;
+}
