@@ -37,7 +37,96 @@ html {
   scroll-behavior: smooth;
 }
 
-
 .section {
   padding-block: 95px;
+}
+.container{
+  padding-inline: 150px;
+}
+
+
+/* style Header */
+
+.header {
+  width: 100%;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.navbar {
+  display: flex;
+  gap: 53px;
+  align-items: center;
+}
+
+.navbar .link {
+  font-size: 20px;
+  font-weight: 400;
+  transition: .4s ease-in-out;
+}
+
+.navbar .link:hover {
+  letter-spacing: 2px;
+}
+
+.underline-container {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.underline {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  display: inline-block;
+  transition: .4s ease-in;
+}
+
+.underline::before,
+.underline-container::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 2px;
+  bottom: -1px;
+  left: 15px;
+  background-color: rgba(42, 165, 144, 0.459);
+  transform: scaleX(0);
+  transition: transform 0.3s ease-out;
+}
+
+.underline:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.current {
+  position: absolute;
+  top: -10px;
+  left: -30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(42, 165, 144, 0.459);
+  z-index: 1;
+}
+.link.underline.current-url {
+  font-weight: 600;
+  color: #000;
 }

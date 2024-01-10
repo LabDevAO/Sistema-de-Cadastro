@@ -1,16 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const openBtn = document.getElementById('openBtn')
-  const closeBtn = document.getElementById('closeBtn')
-  const navbar = document.getElementById('navbar')
-  const links = navbar.querySelectorAll('a')
+  const underlineLinks = document.querySelectorAll('.underline')
 
-  openBtn.addEventListener('click', () => navbar.classList.add('ativar'))
-  closeBtn.addEventListener('click', () => navbar.classList.remove('ativar'))
+  underlineLinks.forEach(link => {
+    link.addEventListener('click', function (event) {
 
-  // Adiciona um listener de clique para cada link no navbar
-  links.forEach(link => {
-    link.addEventListener('click', () => navbar.classList.remove('ativar'))
-    
+      // Remove a div 'active' existente, se houver
+      const existingActiveDiv = document.querySelector(
+        '.underline-container .current'
+      )
+      if (existingActiveDiv) {
+        existingActiveDiv.remove()
+      }
+
+      // Cria e adiciona uma div com a classe 'active' dentro da li
+      const activeDiv = document.createElement('div')
+      activeDiv.classList.add('current')
+      link.parentNode.appendChild(activeDiv)
+
+      // Remove a classe 'current-url' de outros links
+      const otherLinks = document.querySelectorAll('.underline.current-url')
+      otherLinks.forEach(otherLink => {
+        otherLink.classList.remove('current-url')
+      })
+
+      link.classList.add('current-url')
+    })
   })
-
 })
