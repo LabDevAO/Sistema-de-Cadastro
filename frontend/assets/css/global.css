@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 :root {
+  --color-body: rgba(235, 255, 245, 1);
+  --color-primary: rgba(79, 183, 131, 1);
+  --color-secondary: rgba(3, 69, 97, 1);
+  --color-title: rgba(3, 69, 97, 1);
+  --color-text: rgba(0, 0, 0, 1);
+  --color-white: #fff;
+
 
   /*section*/
   --section-padding:95px;
@@ -33,16 +40,52 @@ button {
   cursor: pointer;
 }
 html {
-  font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
 }
+
+body{
+  overflow-x: hidden;
+  color: var(--color-text);
+  background-color: var(--color-body);
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.32px;
+}
+
+/* classes Gerais  */
 
 .section {
   padding-block: 95px;
 }
 .container{
-  padding-inline: 150px;
+  padding-inline: 100px;
 }
+
+.btn-primary{
+  width: 155px;
+  height: 35px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 12px;
+  transition: .4s ease-in-out;
+}
+.btn-primary:hover{
+  filter: brightness(1.2);
+}
+.btn-secondary {
+  width: 155px;
+  height: 35px;
+  background-color: var(--color-while);
+  color: var(--color-text);
+  border-radius: 12px;
+  border: 1px solid var(--color-primary);
+  transition: .4s ease-in-out;
+}
+.btn-secondary:hover{
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
 
 
 /* style Header */
